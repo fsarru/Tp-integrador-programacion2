@@ -12,11 +12,11 @@ import java.util.List;
  */
 public interface GenericDAO<T> {
     // Esta es una interfaz genérica que define métodos comunes para trabajar con cualquier entidad.
-
-    void insertar(T entidad) throws Exception;
-    void actualizar(T entidad)throws Exception;
-    void eliminar(int id)throws Exception;
-    T getById(int id)throws Exception;
-    List<T> getAll()throws Exception;
+//Agregado de SQLException y Connection conn: 
+   void insertar(T entidad, Connection conn) throws SQLException;
+    void actualizar(T entidad, Connection conn) throws SQLException;
+    void eliminar(Long id, Connection conn) throws SQLException; 
+    T getById(Long id, Connection conn) throws SQLException;
+    List<T> getAll(Connection conn) throws SQLException;
 
 }
