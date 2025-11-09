@@ -4,6 +4,9 @@
  */
 package dao;
 
+//Corrección sugerida - Falta conexión a SQL:
+import java.sql.Connection;
+
 import java.util.List;
 
 /**
