@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//Prueba
 public class DatabaseConnection {
 
     // Datos de conexión - Se configuran directamente en el código
