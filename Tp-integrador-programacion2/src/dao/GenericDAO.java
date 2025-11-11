@@ -1,22 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
-/**
- *
- * @author PC
- */
 public interface GenericDAO<T> {
-    // Esta es una interfaz genérica que define métodos comunes para trabajar con cualquier entidad.
-
-    void insertar(T entidad) throws Exception;
-    void actualizar(T entidad)throws Exception;
-    void eliminar(int id)throws Exception;
-    T getById(int id)throws Exception;
-    List<T> getAll()throws Exception;
-
+    
+    // Todos los métodos aceptan Connection conn y propagan SQLException
+    void insertar(T entidad, Connection conn) throws SQLException;
+    void actualizar(T entidad, Connection conn) throws SQLException;
+    void eliminar(Long id, Connection conn) throws SQLException; // ID LONG para BIGINT y Baja Lógica
+    T getById(Long id, Connection conn) throws SQLException;
+    List<T> getAll(Connection conn) throws SQLException;
+    
 }
